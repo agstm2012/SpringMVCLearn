@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="Five:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="spring-ex01-1.0.0-BUILD-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Five:war exploded" />
+    </root>
+  </artifact>
+</component>
