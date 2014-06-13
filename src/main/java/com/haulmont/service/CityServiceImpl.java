@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by Иван on 07.06.2014.
  */
@@ -19,5 +21,10 @@ public class CityServiceImpl implements CityService {
     @Override
     public boolean saveCity(City city) {
         return cityDao.persistCity(city);
+    }
+
+    @Override
+    public List<City> getCities() {
+        return cityDao.getCities();
     }
 }

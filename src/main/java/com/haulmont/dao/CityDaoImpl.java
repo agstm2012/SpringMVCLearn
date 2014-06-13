@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * Created by Иван on 07.06.2014.
  */
@@ -19,5 +21,11 @@ public class CityDaoImpl implements CityDao {
     public boolean persistCity(City city) {
         sessionFactory.getCurrentSession().save(city);
         return true;
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    public List<City> getCities() {
+        return sessionFactory.getCurrentSession().createQuery("from City").list();
     }
 }

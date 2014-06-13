@@ -58,4 +58,10 @@
 
     <bean id="cityService"
           class="com.haulmont.service.CityServiceImpl" />
+
+    <bean id="distanceDao"
+          class="com.haulmont.dao.distance.DistanceDaoImpl" />
+
+    <bean id="distanceService"
+          class="com.haulmont.service.distance.DistanceServiceImpl" />
 </beans>

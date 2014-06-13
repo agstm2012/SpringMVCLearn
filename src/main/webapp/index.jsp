@@ -17,6 +17,7 @@
                 <li class="nav-header">Services</li>
                 <li class="active"><a href="#">New Restaurant</a></li>
                 <li class="active"><a href="/newCity">New City</a></li>
+                <li class="active"><a href="/newDistance">New Distance</a></li>
             </ul>
         </div>
         <div class="span10">

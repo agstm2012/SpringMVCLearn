@@ -7,6 +7,8 @@ import com.haulmont.validation.CityValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * Created by Иван on 07.06.2014.
  */
@@ -21,4 +23,5 @@ public class CreateCityHelper {
         return cityService.saveCity(city);
     }
 
+    public List<City> getCities() { return cityService.getCities(); }
 }
