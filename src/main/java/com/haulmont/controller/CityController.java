@@ -23,7 +23,7 @@ public class CityController {
     }
 
     @RequestMapping(value = "/newCity", method = RequestMethod.GET)
-    public ModelAndView createCity() {
+    public ModelAndView neewCity() {
         return new ModelAndView("city-worker");
     }
 }

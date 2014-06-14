@@ -29,14 +29,23 @@ public class DistanceController {
     private CreateCityHelper createCityHelper;
 
     @RequestMapping(value = "/createDistance", method = RequestMethod.POST)
-    public String createDistance(Distance distance){
+    public ModelAndView createDistance(@ModelAttribute(value="distance") Distance distance, BindingResult result){
+
         distance.setDistance(555l);
         createDistanceHelper.addDistance(distance);
-        return "distance-worker";
+        List<City> cityList = createCityHelper.getCities();
+        Map<Long, String> cityOptionList =  new LinkedHashMap<Long, String>();
+        for(City city : cityList) {
+            cityOptionList.put(city.getId(), city.getName());
+        }
+        ModelAndView modelAndView = new ModelAndView("distance-worker");
+        modelAndView.addObject("cityList", cityOptionList);
+        modelAndView.addObject("distance", new Distance());
+        return modelAndView;
     }
 
     @RequestMapping(value = "/newDistance", method = RequestMethod.GET)
-    public ModelAndView createDistance(@ModelAttribute(value="distance") Distance distance, BindingResult result) {
+    public ModelAndView newDistance(@ModelAttribute(value="distance") Distance distance, BindingResult result) {
         List<City> cityList = createCityHelper.getCities();
         Map<Long, String> cityOptionList =  new LinkedHashMap<Long, String>();
         for(City city : cityList) {
